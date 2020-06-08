@@ -1,5 +1,6 @@
 import React from 'react';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { FriendBox, FriendTitle, Box, FriendId, FriendName, FriendAge, FriendEmail, AllBoxes } from './Styles';
 
 class FriendsList extends React.Component{
 
@@ -37,20 +38,20 @@ class FriendsList extends React.Component{
 
     render(){
         return(
-            <div>
-                <h2>Friend List</h2>
+            <AllBoxes>
+                <FriendTitle>Friends</FriendTitle>
                 {this.state.isLoading}
-                <div>
+                <Box>
                     {this.state.friends.map(friend => 
-                        <div key={friend.id}>
-                            <h4>{`ID: ${friend.id}`}</h4>
-                            <h4>{`${friend.name}`}</h4>
-                            <h4>{`${friend.age} years old`}</h4>
-                            <h4>{`${friend.email}`}</h4>
-                        </div>)
+                        <FriendBox key={friend.id}>
+                            <FriendId>{`ID: ${friend.id}`}</FriendId>
+                            <FriendName>{`Name: ${friend.name}`}</FriendName>
+                            <FriendAge>{`Age: ${friend.age}`}</FriendAge>
+                            <FriendEmail>{`Email: ${friend.email}`}</FriendEmail>
+                        </FriendBox>)
                     }
-                </div>
-            </div>
+                </Box>
+            </AllBoxes>
         )
     }
 }

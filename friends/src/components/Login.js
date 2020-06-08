@@ -1,6 +1,8 @@
 import React from 'react';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
+import { LoginForm, FriendTitle } from './Styles'
+
 class Login extends React.Component {
     constructor() {
         super();
@@ -44,8 +46,8 @@ class Login extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1>Login Page</h1>
+            <LoginForm>
+                <FriendTitle>Login</FriendTitle>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         name='username'
@@ -59,7 +61,7 @@ class Login extends React.Component {
                     />
                     <button>Login</button>
                 </form>
-            </div>
+            </LoginForm>
         )
     }
 }

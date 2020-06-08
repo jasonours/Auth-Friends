@@ -1,5 +1,6 @@
 import React from 'react'
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { FriendAdd, FriendTitle, AllBoxes } from './Styles';
 
 class AddFriend extends React.Component{
 
@@ -35,27 +36,29 @@ class AddFriend extends React.Component{
 
     render(){
         return(
-            <div>
-                <h2>Add Friend</h2>
-                <form onSubmit={this.submitHandler}>
-                    <input
-                        onChange={this.changeHandler} 
-                        placeholder="Name" 
-                        name="name" 
-                    />
-                    <input 
-                        onChange={this.changeHandler} 
-                        placeholder="Age" 
-                        name="age" 
-                    />
-                    <input 
-                        onChange={this.changeHandler} 
-                        placeholder="Email" 
-                        name="email" 
-                    />
-                    <button>Add Friend</button>
-                </form>
-            </div>
+            <AllBoxes>
+                <FriendTitle>Add Friend</FriendTitle>
+                <FriendAdd>
+                    <form onSubmit={this.submitHandler}>
+                        <input
+                            onChange={this.changeHandler} 
+                            placeholder="Name" 
+                            name="name" 
+                        />
+                        <input 
+                            onChange={this.changeHandler} 
+                            placeholder="Age" 
+                            name="age" 
+                        />
+                        <input 
+                            onChange={this.changeHandler} 
+                            placeholder="Email" 
+                            name="email" 
+                        />
+                        <button>Add Friend</button>
+                    </form>
+                </FriendAdd>
+            </AllBoxes>
         )
     }
 }
